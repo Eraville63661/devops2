@@ -1,4 +1,4 @@
-name : Simple workflow
+name : Test avec bouton
 
 on : 
   workflow_dispatch :
