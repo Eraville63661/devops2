@@ -2,9 +2,7 @@
 name : Test avec bouton
 
 on : 
-  push :
-    tags:
-        - 'v*'
+  workflow_dispatch :
 
 jobs:
   job1:
