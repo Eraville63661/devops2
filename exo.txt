@@ -1,0 +1,57 @@
+Exercice Machine Learning : 
+
+1. Créer un fichier python bcancer.py qui va entrainer un modèle de ML pour prédire la présence de cellules cancéreuses : 
+
+##############
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+import pickle
+
+# Charger les données
+from sklearn.datasets import load_breast_cancer
+data = load_breast_cancer()
+
+# Convertir en DataFrame pour une meilleure manipulation
+X = pd.DataFrame(data.data, columns=data.feature_names)
+y = pd.Series(data.target)
+
+# Diviser les données en ensembles d'entraînement et de test
+
+
+# Créer et entraîner le modèle de régression logistique
+
+
+# Évaluer le modèle
+
+
+# Sauvegarder le modèle entraîné au format pickle
+
+###############
+
+2. Créer un fichier python test.py qui va tester la qualité de prédiction du modèle sur un nouvel échantillon de données (disponible ici https://github.com/AbdallahTayeb/DevOps-Course/blob/main/sample.csv) : 
+
+import pandas as pd
+import pickle
+from sklearn.metrics import accuracy_score
+
+# Charger le modèle
+
+
+# Charger ou préparer les données de test
+
+
+# Faire des prédictions
+
+
+# Calculer la précision
+
+
+# Définir un seuil de classification
+
+
+# Vérifier si le seuil est atteint
+############
+
+3. Créer un workflow avec un job build qui va executer bcancer.py et un job test qui va executer test.py
