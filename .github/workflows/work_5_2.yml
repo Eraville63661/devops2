@@ -1,5 +1,5 @@
 
-name : Test avec bouton
+name : Test avec bouton 2
 
 # on : 
 #   push :
@@ -21,13 +21,14 @@ jobs:
         - uses: actions/checkout@v2
 
         - name: env global
-        env:
+        - env:
             STEP_: 'Je suis la variable de STEP'
-        uses: actions/setup-python@v2
-        with:
+        - uses: actions/setup-python@v2
+        - with:
             python-version: '3.8'
-        run: |
+        - run: |
             echo $JOBS_
             echo $JOB2_
             echo $STEP_
+            echo ${vars.testName}
     
