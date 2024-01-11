@@ -23,6 +23,7 @@ jobs:
         - name: env global
         - env:
             STEP_: 'Je suis la variable de STEP'
+        steps:
         - uses: actions/setup-python@v2
         - with:
             python-version: '3.8'
