@@ -1,35 +1,26 @@
-
-name : Test avec bouton 2
-
-# on : 
-#   push :
-#     tags:
-#         - 'v*'
-on : 
-    workflow_dispatch :
-
-jobs:
-    env:
-        JOBS_: 'Je suis la variable de JOBS'
-
-    job2:
+---
+    name: Test avec bouton 2
+    on:
+      workflow_dispatch: null
+    jobs:
+      env:
+        JOBS_: Je suis la variable de JOBS
+      job2:
         env:
-            JOB2_: 'Je suis la variable de JOB2'
-
+          JOB2_: Je suis la variable de JOB2
         runs-on: ubuntu-latest
         steps:
-        - uses: actions/checkout@v2
-
-        - name: env global
-        - env:
-            STEP_: 'Je suis la variable de STEP'
-        steps:
-        - uses: actions/setup-python@v2
-        - with:
-            python-version: '3.8'
-        - run: |
-            echo $JOBS_
-            echo $JOB2_
-            echo $STEP_
-            echo ${{vars.testName}}
+          - uses: actions/checkout@v2
+          - name: env global
+            env:
+              STEP_: Je suis la variable de STEP
+          - uses: actions/setup-python@v2
+            with:
+              python-version: "3.8"
+          - name: test de run
+            run: |
+              echo $JOBS_
+              echo $JOB2_
+              echo $STEP_
+              echo ${{vars.testName}}
     
