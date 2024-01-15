@@ -25,6 +25,10 @@
         needs: build
 
         steps:
+            - uses: actions/setup-python@v2
+              with:
+                python-version: "3.8"
+                
             - name: Recherche du mot cle 'VAGUE'
               env:
                 CHERCHE: 0
