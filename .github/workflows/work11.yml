@@ -14,10 +14,10 @@
 
         steps:
           - name: OK
-            if: ${{vars.TAUX}} >= 0 and ${{vars.TAUX}} <= 1 
+            if: ${{vars.TAUX}} >= 0 && ${{vars.TAUX}} <= 1 
             run: echo "Taux ok"
           - name: Nok
-            if: ${{vars.TAUX}} < 0 or ${{vars.TAUX}} > 1
+            if: ${{vars.TAUX}} < 0 || ${{vars.TAUX}} > 1
             run: echo "Taux nok"
         
         
