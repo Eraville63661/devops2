@@ -31,5 +31,5 @@
               run: python recherche.py "${{ github.event.head_commit.message }}"
 
             - name: Exec
-              if: ($CHERCHE = 1)
+              if: (env.CHERCHE == 1)
               run: echo "j'ai trouvé le mot"
