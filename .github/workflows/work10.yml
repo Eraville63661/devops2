@@ -21,11 +21,13 @@
         - name: Print de if
           run: echo "Je suis dans mon if de main"
     failure:
+      runs-on: ubuntu-latest
       steps:
         - name: Trying to set up python
           uses: actions/setup-python@v2
           with:
             python-version: "3.8"
+        - name: faire planter    
           run: python empty.py
     validation_fail:
       runs-on: ubuntu-latest
