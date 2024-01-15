@@ -1,5 +1,5 @@
 ---
-    name: Condition
+    name: Condition 2
     on:
       workflow_dispatch: null
     jobs:
