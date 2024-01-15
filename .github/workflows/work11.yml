@@ -11,8 +11,14 @@
       cheking:
         runs-on: ubuntu-latest
         needs: build
-        if: ${{vars.TAUX}} >= 0 and ${{vars.TAUX}} <= 1 
+
         steps:
-          - name: Display
-            run: echo "C'est raté"
+          - name: OK
+            if: ${{vars.TAUX}} >= 0 and ${{vars.TAUX}} <= 1 
+            run: echo "Taux ok"
+          - name: Nok
+            if: ${{vars.TAUX}} < 0 or ${{vars.TAUX}} > 1
+            run: echo "Taux nok"
+        
+        
     
