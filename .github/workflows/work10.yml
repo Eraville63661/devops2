@@ -23,9 +23,9 @@
     failure:
       steps:
         - name: Trying to set up python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.8"
+          uses: actions/setup-python@v2
+          with:
+            python-version: "3.8"
           run: python empty.py
     validation_fail:
       runs-on: ubuntu-latest
