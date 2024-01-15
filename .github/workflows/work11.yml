@@ -26,19 +26,19 @@
 
         steps:
             #Premier test :
-            - uses: actions/checkout@v2
-            - uses: actions/setup-python@v2
-              with:
-                python-version: "3.8"
+            # - uses: actions/checkout@v2
+            # - uses: actions/setup-python@v2
+            #   with:
+            #     python-version: "3.8"
 
-            - name: Recherche du mot cle 'VAGUE'
-              env:
-                CHERCHE: 0
-              run: python recherche.py "${{ github.event.head_commit.message }}"
+            # - name: Recherche du mot cle 'VAGUE'
+            #   env:
+            #     CHERCHE: 0
+            #   run: python recherche.py "${{ github.event.head_commit.message }}"
 
-            - name: Exec
-              if: (env.CHERCHE == 1)
-              run: echo "j'ai trouvé le mot"
+            # - name: Exec
+            #   if: (env.CHERCHE == 1)
+            #   run: echo "j'ai trouvé le mot"
             
             #Correction :
             - name: Correction
