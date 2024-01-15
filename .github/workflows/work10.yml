@@ -14,27 +14,24 @@
         - name: Print test
           run: |
             echo "Job Test"
-
     deploy:
       runs-on: ubuntu-latest
       if: github.ref == 'refs/heads/main'
       steps:
         - name: Print de if
           run: echo "Je suis dans mon if de main"
-  
-
-    failure:  
+    failure:
       - name: Trying to set up python
         uses: actions/setup-python@v2
         with:
-            python-version: '3.8'
+          python-version: "3.8"
       - name: Execute Python qui va fail
         run: python empty.py
-      
     validation_fail:
       runs-on: ubuntu-latest
-      needs: build
+      needs: failure
       if: failure()
       steps:
-      - name: Display
-        run: echo "C'est raté"
+        - name: Display
+          run: echo "C'est raté"
+  
